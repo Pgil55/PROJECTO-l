@@ -19,4 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/alumno',[AlumnoController::class,'alumno']);
+Route::get('/alumnos',[AlumnoController::class,'alumnos']);
+Route::get('/alumnos/{id}',[AlumnoController::class,'alumno'])->middleware('mi_middleware');
+Route::delete('/alumnos/{id}',[AlumnoController::class,'delete'])->middleware('mi_middleware');
+Route::post('/alumnos',[AlumnoController::class,'create']);

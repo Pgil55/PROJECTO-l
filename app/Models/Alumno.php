@@ -10,10 +10,11 @@ class alumno extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
+
         'nombre',
         'telefono',
         'edad',
+        'password',
         'email',
         'sexo'
     ];
