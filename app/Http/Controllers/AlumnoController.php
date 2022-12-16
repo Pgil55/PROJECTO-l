@@ -43,10 +43,12 @@ class AlumnoController extends Controller
     public function delete(Request $request){
 
         $alumno = Alumno::where('id', $request->id)->delete();
+        $response = [
+            'success' => true,
+            'message' => 'Alumno borrado ciruja',
+        ];
 
-
-
-        return response()->json($alumno);
+        return response()->json($response);
 
     }
 
@@ -58,8 +60,30 @@ class AlumnoController extends Controller
         'telefono' => 'nullable|string|max:16',
         'edad'=> 'nullable|integer',
         'password'=> 'required|string|max:64',
-        'email'=>'nullable|string|max:64',
+        'email'=>'nullable|string|max:64|unique:alumnos',
         'sexo'=> 'nullable|string'
         ]));
+    }
+
+
+    public function modificar(Request $request , $id){
+        $alumno = Alumno::findOrFail($id);
+
+        $alumno ->nombre = $request->nombre;
+        $alumno ->telefono = $request->telefono;
+        $alumno ->edad = $request->edad;
+        $alumno ->password = $request->password;
+        $alumno ->email = $request->email;
+        $alumno ->sexo = $request->sexo;
+        $alumno->save();
+        
+        $response = [
+            'success' => true,
+            'message' => 'Alumno modificado',
+            'data' => $alumno
+        ];
+
+        return response()->json($response);
+
     }
 }

@@ -17,11 +17,11 @@ class mi_middleware
     public function handle(Request $request, Closure $next)
     {
         $id = $request->id;
-        //2. Validar
+        
         if (!is_numeric($id) || $id < 0) {
             return response('error', 422);
         } else {
-            //3. Dejar seguir o tirar hacia atras
+            
             return  $next($request);
         }
     }
