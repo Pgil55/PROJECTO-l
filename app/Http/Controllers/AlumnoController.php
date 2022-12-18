@@ -32,7 +32,7 @@ class AlumnoController extends Controller
 
         $response = [
             'success' => true,
-            'message' => 'Este es tu alumno',
+            'message' => 'Este es tu alumno elegido',
             'data' => $alumno
         ];
 
@@ -45,7 +45,7 @@ class AlumnoController extends Controller
         $alumno = Alumno::where('id', $request->id)->delete();
         $response = [
             'success' => true,
-            'message' => 'Alumno borrado ciruja',
+            'message' => 'Alumno borrado correctamente ',
         ];
 
         return response()->json($response);
@@ -63,6 +63,12 @@ class AlumnoController extends Controller
         'email'=>'nullable|string|max:64|unique:alumnos',
         'sexo'=> 'nullable|string'
         ]));
+        $response = [
+            'success' => true,
+            'message' => 'Alumno creado correctamente',
+        ];
+
+        return response()->json($response);
     }
 
 
@@ -79,7 +85,7 @@ class AlumnoController extends Controller
         
         $response = [
             'success' => true,
-            'message' => 'Alumno modificado',
+            'message' => 'Alumno modificado correctamente',
             'data' => $alumno
         ];
 
