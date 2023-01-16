@@ -24,3 +24,6 @@ Route::get('/alumnos/{id}',[AlumnoController::class,'alumno'])->middleware('mi_m
 Route::delete('/alumnos/{id}',[AlumnoController::class,'delete'])->middleware('mi_middleware');
 Route::post('/alumnos',[AlumnoController::class,'create']);
 Route::put('/alumnos/{id}',[AlumnoController::class,'modificar'])->middleware('mi_middleware');
+
+
+Route::get('/alumnos/{id}/clases',[AlumnoController::class,'clases'])->middleware('mi_middleware');

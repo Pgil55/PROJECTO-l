@@ -16,7 +16,8 @@ class alumno extends Model
         'edad',
         'password',
         'email',
-        'sexo'
+        'sexo',
+        
     ];
 
     protected $hidden = [
@@ -25,5 +26,14 @@ class alumno extends Model
         'updated_at'
     ];
 
-    
+    public function clase(){
+        
+        return $this->hasMany(Clase::class);
+    }
+
+    public function expulsion(){
+        
+        return $this->hasOne(expulsion::class);
+    }
+
 }

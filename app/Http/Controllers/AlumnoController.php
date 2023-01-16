@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\Clase;
 use Illuminate\Http\Request;
 
 use App\Models\Alumno;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Model;
 
 class AlumnoController extends Controller
 {
@@ -61,7 +63,8 @@ class AlumnoController extends Controller
         'edad'=> 'nullable|integer',
         'password'=> 'required|string|max:64',
         'email'=>'nullable|string|max:64|unique:alumnos',
-        'sexo'=> 'nullable|string'
+        'sexo'=> 'nullable|string',
+        'id_Clase'=>'nullable|integer'
         ]));
         $response = [
             'success' => true,
@@ -91,5 +94,17 @@ class AlumnoController extends Controller
 
         return response()->json($response);
 
+    }
+
+    public function clases(Request $request , $id){
+        $alumno = Alumno::find($id);
+        $alumno->id_Clase;
+        $response = [
+            'success' => true,
+            'message' => 'Alumno con clases',
+            'data' => $alumno
+        ];
+
+        return  response()->json($response);
     }
 }
