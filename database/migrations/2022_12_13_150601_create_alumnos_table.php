@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('password',64);
             $table->string('email',64)->unique();
             $table->string('sexo');
-            
             $table->timestamps();
         });
     }

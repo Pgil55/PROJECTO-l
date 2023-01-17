@@ -97,15 +97,11 @@ class AlumnoController extends Controller
     }
 
     public function clases(Request $request , $id){
-        $alumno = Alumno::find($id);
-        $alumno->id_Clase;
-        $response = [
-            'success' => true,
-            'message' => 'Alumno con clases',
-            'data' => $alumno
-        ];
+        $clase = Alumno::find($id)->clase;
+        
+        
 
-        return  response()->json($response);
+        return $clase  ;
     }
 
     public  function expulsion(Request $request , $id){

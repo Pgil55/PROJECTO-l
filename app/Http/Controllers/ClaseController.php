@@ -9,5 +9,11 @@ class ClaseController extends Controller
 {
     //
 
-    
+    public  function alumno(Request $request , $id){
+
+        $alumno = Clase::find($id)->alumno;
+
+        return $alumno ;
+
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\ClaseController;
 use App\Http\Controllers\ExpulsionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,4 @@ Route::put('/alumnos/{id}',[AlumnoController::class,'modificar'])->middleware('m
 Route::get('/alumnos/{id}/clases',[AlumnoController::class,'clases'])->middleware('mi_middleware');
 Route::get('/alumnos/{id}/expulsion',[AlumnoController::class,'expulsion'])->middleware('mi_middleware');
 Route::get('/expulsion/{id}/alumnos',[ExpulsionController::class,'alumno'])->middleware('mi_middleware');
+Route::get('/clases/{id}/alumnos',[ClaseController::class,'alumno'])->middleware('mi_middleware');

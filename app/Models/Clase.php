@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clase extends Model
 {
+    public $table = 'clase';
     use HasFactory;
     protected $fillable = [
         'lengua',
