@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\alumno;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +16,8 @@ return new class extends Migration
     {
         Schema::create('expulsion', function (Blueprint $table) {
             $table->id();
-            $table->boolean();
+            $table->boolean('expulsion');
+            $table->foreignId('alumno_id')->constrained('alumnos');
             $table->timestamps();
         });
     }

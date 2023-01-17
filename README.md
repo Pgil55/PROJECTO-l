@@ -8,3 +8,4 @@
 8. php artisan migrate ====> es la que se usa para migrar 
 9. php artisan migrate:fresh --seed ====> para guardar los alumnos creados borra lo hecho ya y lo vuelve a poner actualizado
 10.php artisan make:middleware (nombre de la carpeta ) ====>  crea en la carpeta middleware  la nueva middleware y luego eso lo pones en el kernel
+php artisan migrate --path=/database/migrations/2023_01_16_195220_create_expulsion_table.php 

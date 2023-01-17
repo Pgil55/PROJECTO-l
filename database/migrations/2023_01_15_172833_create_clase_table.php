@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('ciencias');
             $table->string('educacion_fisica');
             $table->string('lenguas_extrangeras');
-            
             $table->timestamps();
         });
     }

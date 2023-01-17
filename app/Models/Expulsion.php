@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class expulsion extends Model
 {
+    public $table = 'expulsion';
     use HasFactory;
 
     protected $fillable = [
@@ -20,7 +21,7 @@ class expulsion extends Model
 
     public function alumno()
     {
-        return $this->belongsTo(alumno::class);
+        return $this->belongsTo(Alumno::class);
     }
 
 }

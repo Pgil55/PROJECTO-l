@@ -17,11 +17,14 @@ class ExpulsionSeeder extends Seeder
     {
         //
         DB::table('expulsion')->insert([
-            'expulsion'=> true
+            'expulsion'=> true,
+            'alumno_id'=>1
+
         ]);
 
         DB::table('expulsion')->insert([
-            'expulsion'=> false
+            'expulsion'=> false,
+            'alumno_id'=>2
         ]);
     }
 }

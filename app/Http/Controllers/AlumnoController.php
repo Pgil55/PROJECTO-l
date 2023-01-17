@@ -107,4 +107,12 @@ class AlumnoController extends Controller
 
         return  response()->json($response);
     }
+
+    public  function expulsion(Request $request , $id){
+
+        $expulsion = Alumno::find($id)->expulsion;
+
+        return $expulsion ;
+
+    }
 }

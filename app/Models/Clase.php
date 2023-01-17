@@ -23,6 +23,6 @@ class Clase extends Model
 
     public function alumno()
 {
-    return $this->belongsTo(alumno::class);
+    return $this->belongsTo(Alumno::class);
 }
 }
